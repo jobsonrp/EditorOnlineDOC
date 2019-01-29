@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Find table cell value on cell (table) click using JavaScript</title>
+</head>
+<body>
+    <center>
+        Click on below table cell to find its value.
+        <br />
+        <br />
+    </center>
+    <table align="center" id="tblMain" border="1" style="cursor: pointer;">
+        <tr>
+            <td>
+                R1C1
+            </td>
+            <td>
+                R1C2
+            </td>
+            <td>
+                R1C3
+            </td>
+            <td>
+                R1C4
+            </td>
+        </tr>
+        <tr>
+            <td>
+                R2C1
+            </td>
+            <td>
+                R2C2
+            </td>
+            <td>
+                R2C3
+            </td>
+            <td>
+                R2C4
+            </td>
+        </tr>
+    </table>
+    <br />
+
+    <p id="demo1"> Teste1</p>
+
+    <script language="javascript">
+        var tbl = document.getElementById("tblMain");
+        var valor1 = '';
+        if (tbl != null) {
+            for (var i = 0; i < tbl.rows.length; i++) {
+                for (var j = 0; j < tbl.rows[i].cells.length; j++)
+                    if (j == 2) {
+                        tbl.rows[i].cells[j].onclick = function () { 
+                            getval(this);
+                            document.getElementById("demo1").innerHTML = this.innerHTML;
+                            };
+                    }
+            }
+        }
+        function getval(cel) {
+            alert(cel.innerHTML);
+        }
+    </script>
+</body>
+</html>

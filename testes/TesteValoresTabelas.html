@@ -1,0 +1,73 @@
+<html>
+<head>
+    <title>Find table cell value on cell (table) click using JavaScript</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <center>
+        Click on below table cell to find its value.
+        <br />
+        <br />
+    </center>
+    
+    <table id='thisTable' class='disptable' style='margin-left:auto;margin-right:auto;'  >
+        <tr>
+            <th>Fund</th>
+            <th>Organization</th>
+            <th>Access</th>
+            <th>Delete</th>
+        </tr>
+        <tr>
+            <td class='fund'>106676-2</td>
+            <td class='org'>10110-2</td>
+            <td>OWNED2</td>
+            <td><a  class='delbtn' href='#'>X2</a></td>
+            <td><a  class='delbtn2' href='#'>Y2</a></td>
+        </tr>
+        <tr>
+            <td class='fund'>106676-3</td>
+            <td class='org'>10110-3</td>
+            <td>OWNED3</td>
+            <td><a  class='delbtn' href='#'>X3</a></td>
+            <td><a  class='delbtn2' href='#'>Y3</a></td>
+        </tr>
+    </table>
+
+    <br />
+
+    <p id="demo1"> Teste1</p>
+
+    <script language="javascript">
+        jQuery('.delbtn').on('click', function() {
+            var $row = jQuery(this).closest('tr');
+            var $columns = $row.find('td');
+
+            $columns.addClass('row-highlight');
+            var values = "";
+            
+            jQuery.each($columns, function(i, item) {
+                if (i == 0){
+                    values = values + 'td' + (i) + ':' + item.innerHTML + '<br/>';
+                    alert(values);
+                }
+            });
+            console.log(values);
+        });
+        jQuery('.delbtn2').on('click', function() {
+            var $row = jQuery(this).closest('tr');
+            var $columns = $row.find('td');
+
+            $columns.addClass('row-highlight');
+            var values = "";
+            
+            jQuery.each($columns, function(i, item) {
+                if (i == 1){
+                    values = values + 'td' + (i) + ':' + item.innerHTML + '<br/>';
+                    alert(values);
+                }
+            });
+            console.log(values);
+        });
+    </script>
+</body>
+</html>
