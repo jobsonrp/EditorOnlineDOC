@@ -1,6 +1,6 @@
 # EditorOnlineDOC
 
-Link do projeto online: [MyDOCs](http://mydocsbsi.000webhostapp.com/)
+Link do projeto online: [MyDOCs](http://eodoc.sistemasdeti.pe.hu/)
 
 ## Acesso aos Documentos e Funcionalidades
 
